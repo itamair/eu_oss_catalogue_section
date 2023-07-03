@@ -1,0 +1,17 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.oss_solution_source
+id: taxonomy_term.oss_solution_source.name
+field_name: name
+entity_type: taxonomy_term
+bundle: oss_solution_source
+label: Name
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

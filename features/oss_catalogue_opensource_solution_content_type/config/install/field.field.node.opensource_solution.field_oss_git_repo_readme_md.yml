@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_oss_git_repo_readme_md
+    - node.type.opensource_solution
+  module:
+    - text
+id: node.opensource_solution.field_oss_git_repo_readme_md
+field_name: field_oss_git_repo_readme_md
+entity_type: node
+bundle: opensource_solution
+label: 'Git Readme.md'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

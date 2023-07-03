@@ -1,0 +1,37 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_oss_git_repo_icon
+    - node.type.opensource_solution
+  module:
+    - image
+id: node.opensource_solution.field_oss_git_repo_icon
+field_name: field_oss_git_repo_icon
+entity_type: node
+bundle: opensource_solution
+label: 'Git Repo Icon'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: git_repo_icons
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: 3MB
+  max_resolution: 800x800
+  min_resolution: 80x80
+  alt_field: true
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+field_type: image

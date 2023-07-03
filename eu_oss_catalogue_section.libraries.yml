@@ -1,0 +1,5 @@
+common:
+  version: 1.x
+  css:
+    component:
+      css/common.css: {}

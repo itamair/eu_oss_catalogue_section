@@ -1,0 +1,7 @@
+name: 'Migrations OSS PubliccodeYaml DevelopersItalia'
+type: module
+core_version_requirement: '^8.9 || ^9'
+dependencies:
+  - 'migrate_plus:migrate_plus'
+version: '1.1'
+package: 'OSS Catalogue'

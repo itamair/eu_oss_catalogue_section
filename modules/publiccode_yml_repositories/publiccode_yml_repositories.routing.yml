@@ -1,0 +1,7 @@
+publiccode_yml_repositories.sources_list:
+  path: 'publiccodeyml_sources_list'
+  defaults:
+    _title: 'Pubblicode.Yml Sources List'
+    _controller: '\Drupal\publiccode_yml_repositories\Controller\PubliccodeSourcesController::build'
+  requirements:
+    _permission: 'access content'

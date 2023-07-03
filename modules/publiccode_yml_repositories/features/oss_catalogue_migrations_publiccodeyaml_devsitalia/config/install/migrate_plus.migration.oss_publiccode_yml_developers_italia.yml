@@ -1,0 +1,147 @@
+langcode: en
+status: true
+dependencies: {  }
+id: oss_publiccode_yml_developers_italia
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - eu_oss_catalogue_section
+migration_group: migrations_ec_oss_catalogue
+label: 'OSS Publiccode Yaml Developers Italia'
+source:
+  plugin: publiccode_yml_sources
+  data_fetcher_plugin: http
+  data_parser_plugin: json
+  urls:
+    - 'https://api.developers.italia.it/v1/software?all=true&page%5Bsize%5D=500'
+  item_selector: data
+  fields:
+    -
+      name: id
+      label: 'The unique Identifier of the OSS Publiccode.yml project'
+      selector: id
+    -
+      name: langcode
+      label: 'Publiccode.yml project langcode'
+      selector: langcode
+    -
+      name: name
+      label: 'Publiccode.yml project name'
+      selector: name
+    -
+      name: url
+      label: 'Url of the OSS Git repo'
+      selector: url
+    -
+      name: aliases
+      label: Aliases
+      selector: aliases
+    -
+      name: publiccodeYml
+      label: 'The publiccode content in Yml format'
+      selector: publiccodeYml
+    -
+      name: active
+      label: 'Activation State of the specific OSS'
+      selector: active
+    -
+      name: createdAt
+      label: 'Creation date in Zulu time (UTC)'
+      selector: createdAt
+    -
+      name: updatedAt
+      label: 'Update date in Zulu time (UTC)'
+      selector: updatedAt
+  ids:
+    id:
+      type: string
+    url:
+      type: string
+process:
+  type:
+    plugin: default_value
+    default_value: opensource_solution
+  uuid: id
+  langcode: langcode
+  title: name
+  field_oss_git_repo_id: id
+  field_oss_created:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: createdAt
+    -
+      plugin: substr
+      start: 0
+      length: 10
+    -
+      plugin: format_date
+      from_format: Y-m-d
+      to_format: Y-m-d
+      from_timezone: UTC
+      to_timezone: UTC
+  field_oss_updated:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: updatedAt
+    -
+      plugin: substr
+      start: 0
+      length: 10
+    -
+      plugin: format_date
+      from_format: Y-m-d
+      to_format: Y-m-d
+      from_timezone: UTC
+      to_timezone: UTC
+  field_oss_publiccode_active:
+    plugin: convert_boolean
+    source: active
+  field_oss_git_repo_url: url
+  field_oss_publiccode_yml_content: publiccodeYml
+  field_oss_description:
+    -
+      plugin: publiccode_yml_description
+      source: publiccodeYml
+    -
+      plugin: skip_on_empty
+      method: process
+  field_oss_short_description:
+    -
+      plugin: publiccode_yml_short_description
+      source: publiccodeYml
+    -
+      plugin: skip_on_empty
+      method: process
+  field_oss_git_repo_icon:
+    -
+      plugin: publiccode_yml_logo
+      source: publiccodeYml
+    -
+      plugin: image_import
+      skip_on_missing_source: true
+      skip_on_error: true
+      rename: true
+      destination: constants/file_destination
+      title: name
+      alt: name
+  field_oss_source:
+    -
+      plugin: default_value
+      default_value: 'Developers Italia'
+    -
+      plugin: entity_generate
+      entity_type: taxonomy_term
+      value_key: name
+      bundle: oss_solution_source
+  sticky:
+    plugin: default_value
+    default_value: 0
+  uid:
+    plugin: default_value
+    default_value: 0
+destination:
+  plugin: 'entity:node'
+migration_dependencies: {  }

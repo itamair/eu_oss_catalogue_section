@@ -1,0 +1,13 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for publiccode_yml_repositories module.
+ */
+
+/**
+ * Implements hook_page_attachments().
+ */
+function ec_oss_catalogue_page_attachments(array &$page) {
+  $page['#attached']['library'][] = 'eu_oss_catalogue_section/common';
+}

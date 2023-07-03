@@ -1,0 +1,62 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.opensource_solution.field_git_repo_description
+    - field.field.node.opensource_solution.field_oss_created
+    - field.field.node.opensource_solution.field_oss_description
+    - field.field.node.opensource_solution.field_oss_git_repo_icon
+    - field.field.node.opensource_solution.field_oss_git_repo_id
+    - field.field.node.opensource_solution.field_oss_git_repo_readme_md
+    - field.field.node.opensource_solution.field_oss_git_repo_url
+    - field.field.node.opensource_solution.field_oss_publiccode_active
+    - field.field.node.opensource_solution.field_oss_publiccode_yml_content
+    - field.field.node.opensource_solution.field_oss_short_description
+    - field.field.node.opensource_solution.field_oss_source
+    - field.field.node.opensource_solution.field_oss_updated
+    - node.type.opensource_solution
+  module:
+    - link
+    - user
+id: node.opensource_solution.teaser
+targetEntityType: node
+bundle: opensource_solution
+mode: teaser
+content:
+  field_oss_description:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_oss_git_repo_url:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 200
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  field_git_repo_description: true
+  field_oss_created: true
+  field_oss_git_repo_icon: true
+  field_oss_git_repo_id: true
+  field_oss_git_repo_readme_md: true
+  field_oss_publiccode_active: true
+  field_oss_publiccode_yml_content: true
+  field_oss_short_description: true
+  field_oss_source: true
+  field_oss_updated: true
+  langcode: true

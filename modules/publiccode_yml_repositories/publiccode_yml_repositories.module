@@ -1,0 +1,44 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for publiccode_yml_repositories module.
+ */
+
+use Drupal\migrate\MigrateExecutable;
+use Drupal\migrate\MigrateMessage;
+use Drupal\migrate\MigrateException;
+use Drupal\Component\Plugin\Exception\PluginException;
+
+/**
+ * Implements hook_cron().
+ */
+function publiccode_yml_repositories_importer_cron() {
+
+  $ordered_migrations = [
+    'developers_italia',
+  ];
+
+  /** @var \Drupal\migrate\Plugin\MigrationPluginManager $migration_manager */
+  $migration_manager = \Drupal::service('plugin.manager.migration');
+  $migrations = $migration_manager->getDefinitions();
+
+  foreach ($ordered_migrations as $id) {
+    if (array_key_exists($id, $migrations)) {
+      try {
+        /** @var \Drupal\migrate\Plugin\MigrationInterface $migration */
+        $migration = $migration_manager->createInstance($id);
+        $migration->getIdMap()->prepareUpdate();
+        $executable = new MigrateExecutable($migration, new MigrateMessage());
+        $executable->import();
+      }
+      catch (MigrateException $e) {
+        watchdog_exception('un_developer_import', $e);
+      }
+      catch (PluginException $e) {
+        watchdog_exception('un_developer_import', $e);
+      }
+    }
+
+  }
+}

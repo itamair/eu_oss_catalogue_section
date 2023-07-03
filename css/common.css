@@ -1,0 +1,123 @@
+/* line 1, ../sass/common.scss */
+.views-ui-display-tab-setting.overridden,
+.views-ui-display-tab-bucket.overridden {
+  font-style: italic;
+  color: red !important;
+  font-weight: bold;
+}
+
+/* line 8, ../sass/common.scss */
+.page-wrapper {
+  max-width: 100% !important;
+}
+
+/**
+ * @file
+ * Grid system definition for the content wide layout.
+ */
+/* line 17, ../sass/common.scss */
+.layout--content-medium,
+.layout--pass--content-medium > * {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 6;
+  grid-column: 2 / 18 !important;
+  width: 100%;
+}
+
+@media (min-width: 43.75rem) {
+  /* line 27, ../sass/common.scss */
+  .layout--content-medium,
+  .layout--pass--content-medium > * {
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 12;
+    grid-column: 2 / 18 !important;
+  }
+}
+@media (min-width: 62.5rem) {
+  /* line 37, ../sass/common.scss */
+  .layout--content-medium,
+  .layout--pass--content-medium > * {
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 10;
+    grid-column: 2 / 18 !important;
+  }
+}
+/*
+  If .layout--content-medium is nested within itself, or an element that's inheriting the
+  layout--content-medium styles from its parent region, go full width within its
+  parent .grid-full.
+*/
+@media (min-width: 43.75rem) {
+  /* line 53, ../sass/common.scss */
+  .layout--pass--content-medium > * .layout--content-medium,
+  .layout--content-medium .layout--content-medium,
+  .layout--pass--content-medium > * .layout--pass--content-medium > *,
+  .layout--content-medium .layout--pass--content-medium > * {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 12;
+    grid-column: 2 / 18 !important;
+  }
+}
+@media (min-width: 62.5rem) {
+  /* line 65, ../sass/common.scss */
+  .layout--pass--content-medium > * .layout--content-medium,
+  .layout--content-medium .layout--content-medium,
+  .layout--pass--content-medium > * .layout--pass--content-medium > *,
+  .layout--content-medium .layout--pass--content-medium > * {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 10;
+    grid-column: 2 / 18 !important;
+  }
+}
+/* line 75, ../sass/common.scss */
+.views-field.views-field-field-oss-git-repo-icon {
+  min-width: 100px !important;
+}
+
+/* line 79, ../sass/common.scss */
+.wide-image {
+  margin-left: 0 !important;
+}
+
+/* line 84, ../sass/common.scss */
+.field--name-field-oss-git-repo-readme-md .field__item {
+  color: darkslategray;
+  font-size: 1rem;
+  margin: 20px;
+}
+/* line 88, ../sass/common.scss */
+.field--name-field-oss-git-repo-readme-md .field__item h1 {
+  color: darkslategray;
+  font-size: 1.8rem;
+  margin-top: 1.2rem;
+  margin-bottom: inherit;
+}
+/* line 94, ../sass/common.scss */
+.field--name-field-oss-git-repo-readme-md .field__item h2 {
+  color: darkslategray;
+  font-size: 1.6rem;
+  margin-top: 1.2rem;
+  margin-bottom: inherit;
+}
+/* line 100, ../sass/common.scss */
+.field--name-field-oss-git-repo-readme-md .field__item h3 {
+  color: darkslategray;
+  font-size: 1.4rem;
+  margin-top: 1.1rem;
+  margin-bottom: inherit;
+}
+/* line 106, ../sass/common.scss */
+.field--name-field-oss-git-repo-readme-md .field__item h4,
+.field--name-field-oss-git-repo-readme-md .field__item h5,
+.field--name-field-oss-git-repo-readme-md .field__item h6 {
+  color: darkslategray;
+  font-size: 1.1rem;
+  margin-top: 1.1rem;
+  margin-bottom: inherit;
+}
+/* line 114, ../sass/common.scss */
+.field--name-field-oss-git-repo-readme-md .field__item p {
+  color: darkslategray;
+  margin-top: inherit;
+  margin-bottom: inherit;
+}

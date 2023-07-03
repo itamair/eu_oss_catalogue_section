@@ -1,0 +1,12 @@
+name: Git Projects Federator
+type: module
+description: "Catalogue builder of Git Projects federated sources & repositories"
+package: EU OSS Catalogue
+core_version_requirement: ^9 || ^10
+
+dependencies:
+  - eu_oss_catalogue_section:eu_oss_catalogue_section
+  - svg_image:svg_image
+  - migrate_plus:migrate_plus
+  - migrate_tools:migrate_tools
+  - migrate_file:migrate_file

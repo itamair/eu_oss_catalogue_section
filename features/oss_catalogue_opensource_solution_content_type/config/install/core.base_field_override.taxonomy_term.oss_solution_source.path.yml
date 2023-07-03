@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.oss_solution_source
+  module:
+    - path
+id: taxonomy_term.oss_solution_source.path
+field_name: path
+entity_type: taxonomy_term
+bundle: oss_solution_source
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

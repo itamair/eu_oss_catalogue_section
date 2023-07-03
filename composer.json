@@ -1,0 +1,25 @@
+{
+    "name": "eu_oss_catalogue_section",
+    "description": "Catalogue builder of EU OSS Solutions Catalogue federated sources & repositories",
+    "type": "drupal-module",
+    "homepage": "https://www.drupal.org/project/eu_oss_catalogue_section",
+    "authors": [
+        {
+            "name": "Italo Mairo",
+            "homepage": "https://www.drupal.org/u/itamair",
+            "role": "Maintainer"
+        }
+    ],
+    "support": {
+        "issues": "https://www.drupal.org/project/issues/eu_oss_catalogue_section",
+        "source": "https://git.drupalcode.org/project/eu_oss_catalogue_section"
+    },
+    "license": "GPL-2.0+",
+    "minimum-stability": "dev",
+    "require": {
+        "league/commonmark": "^2.4",
+        "drupal/yaml_editor": "^1.1",
+        "drupal/svg_image": "^3.0",
+        "drupal/migrate_plus": "^6.0"
+    }
+}

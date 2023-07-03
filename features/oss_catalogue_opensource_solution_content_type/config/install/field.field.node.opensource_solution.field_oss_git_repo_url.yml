@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_oss_git_repo_url
+    - node.type.opensource_solution
+  module:
+    - link
+id: node.opensource_solution.field_oss_git_repo_url
+field_name: field_oss_git_repo_url
+entity_type: node
+bundle: opensource_solution
+label: 'Git Repo Url'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 0
+  link_type: 16
+field_type: link

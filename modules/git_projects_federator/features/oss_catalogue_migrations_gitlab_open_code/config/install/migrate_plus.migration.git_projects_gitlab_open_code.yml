@@ -1,0 +1,158 @@
+langcode: en
+status: true
+dependencies: {  }
+id: git_projects_gitlab_open_code
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - eu_oss_catalogue_section
+migration_group: migrations_ec_oss_catalogue
+label: 'Git Projects Gitlab Open CoDE'
+source:
+  plugin: gitlab_projects_urls
+  data_fetcher_plugin: http
+  data_parser_plugin: json_gitlab
+  gitlab_domain: 'https://gitlab.opencode.de'
+  urls: null
+  langcode: de
+  fields:
+    -
+      name: id
+      label: 'The unique Identifier of the Gitlab Open CoDE project'
+      selector: id
+    -
+      name: name
+      label: 'Gitlab Open CoDE project name'
+      selector: name
+    -
+      name: description
+      label: 'Gitlab Open CoDE project description'
+      selector: description
+    -
+      name: web_url
+      label: 'Url of the Gitlab Open CoDE repo'
+      selector: web_url
+    -
+      name: avatar_url
+      label: avatar_url
+      selector: avatar_url
+    -
+      name: created_at
+      label: 'Creation date in Zulu time (UTC)'
+      selector: created_at
+    -
+      name: last_activity_at
+      label: 'Lst activity on the Git repo in Zulu time (UTC)'
+      selector: last_activity_at
+  ids:
+    id:
+      type: string
+    web_url:
+      type: string
+  constants:
+    file_destination: 'public://git_projects_icons/'
+process:
+  langcode: langcode
+  type:
+    plugin: default_value
+    default_value: opensource_solution
+  title: name
+  field_oss_git_repo_id: id
+  field_oss_created:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: createdAt
+    -
+      plugin: substr
+      start: 0
+      length: 10
+    -
+      plugin: format_date
+      from_format: Y-m-d
+      to_format: Y-m-d
+      from_timezone: UTC
+      to_timezone: UTC
+  field_oss_updated:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: updatedAt
+    -
+      plugin: substr
+      start: 0
+      length: 10
+    -
+      plugin: format_date
+      from_format: Y-m-d
+      to_format: Y-m-d
+      from_timezone: UTC
+      to_timezone: UTC
+  field_oss_git_repo_url: web_url
+  field_oss_git_repo_icon:
+    plugin: gitlab_project_icon_import
+    source: avatar_url
+    skip_on_missing_source: true
+    skip_on_error: true
+    rename: true
+    destination: constants/file_destination
+    title: name
+    alt: name
+  field_git_repo_description: description
+  field_oss_publiccode_yml_content:
+    -
+      plugin: gitlab_project_publiccode_yml_content
+      source: id
+    -
+      plugin: skip_on_empty
+      method: row
+  field_oss_description:
+    -
+      plugin: gitlab_project_publiccode_yml_content
+      source: id
+    -
+      plugin: skip_on_empty
+      method: process
+    -
+      plugin: publiccode_yml_description
+    -
+      plugin: skip_on_empty
+      method: process
+  field_oss_short_description:
+    -
+      plugin: gitlab_project_publiccode_yml_content
+      source: id
+    -
+      plugin: skip_on_empty
+      method: process
+    -
+      plugin: publiccode_yml_short_description
+    -
+      plugin: skip_on_empty
+      method: process
+  field_oss_git_repo_readme_md/value:
+    -
+      plugin: gitlab_project_readme
+      source: id
+  field_oss_git_repo_readme_md/format:
+    plugin: default_value
+    default_value: markdown_syntax
+  field_oss_source:
+    -
+      plugin: default_value
+      default_value: 'Gitlab Open CoDE'
+    -
+      plugin: entity_generate
+      entity_type: taxonomy_term
+      value_key: name
+      bundle: oss_solution_source
+  sticky:
+    plugin: default_value
+    default_value: 0
+  uid:
+    plugin: default_value
+    default_value: 0
+destination:
+  plugin: 'entity:node'
+migration_dependencies: {  }

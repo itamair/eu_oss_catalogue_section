@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_oss_git_repo_id
+    - node.type.opensource_solution
+id: node.opensource_solution.field_oss_git_repo_id
+field_name: field_oss_git_repo_id
+entity_type: node
+bundle: opensource_solution
+label: 'Git Repo Id'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

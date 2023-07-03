@@ -1,0 +1,187 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.opensource_solution.field_git_repo_description
+    - field.field.node.opensource_solution.field_oss_created
+    - field.field.node.opensource_solution.field_oss_description
+    - field.field.node.opensource_solution.field_oss_git_repo_icon
+    - field.field.node.opensource_solution.field_oss_git_repo_id
+    - field.field.node.opensource_solution.field_oss_git_repo_readme_md
+    - field.field.node.opensource_solution.field_oss_git_repo_url
+    - field.field.node.opensource_solution.field_oss_publiccode_active
+    - field.field.node.opensource_solution.field_oss_publiccode_yml_content
+    - field.field.node.opensource_solution.field_oss_short_description
+    - field.field.node.opensource_solution.field_oss_source
+    - field.field.node.opensource_solution.field_oss_updated
+    - image.style.thumbnail
+    - node.type.opensource_solution
+  module:
+    - datetime
+    - link
+    - path
+    - svg_image
+    - text
+    - yaml_editor
+id: node.opensource_solution.default
+targetEntityType: node
+bundle: opensource_solution
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_git_repo_description:
+    type: string_textarea
+    weight: 12
+    region: content
+    settings:
+      rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+  field_oss_created:
+    type: datetime_default
+    weight: 16
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_oss_description:
+    type: string_textarea
+    weight: 4
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_oss_git_repo_icon:
+    type: image_image
+    weight: 10
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+  field_oss_git_repo_id:
+    type: string_textfield
+    weight: 11
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_oss_git_repo_readme_md:
+    type: text_textarea
+    weight: 13
+    region: content
+    settings:
+      rows: 8
+      placeholder: ''
+    third_party_settings: {  }
+  field_oss_git_repo_url:
+    type: link_default
+    weight: 7
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_oss_publiccode_active:
+    type: boolean_checkbox
+    weight: 2
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_oss_publiccode_yml_content:
+    type: yaml_editor
+    weight: 9
+    region: content
+    settings:
+      rows: '30'
+      placeholder: ''
+    third_party_settings: {  }
+  field_oss_short_description:
+    type: string_textarea
+    weight: 3
+    region: content
+    settings:
+      rows: 2
+      placeholder: ''
+    third_party_settings: {  }
+  field_oss_source:
+    type: entity_reference_autocomplete
+    weight: 6
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_oss_updated:
+    type: datetime_default
+    weight: 15
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 0
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 20
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    weight: 14
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 17
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    weight: 18
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  translation:
+    weight: 8
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 19
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

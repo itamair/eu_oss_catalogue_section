@@ -1,0 +1,119 @@
+.views-ui-display-tab-setting.overridden,
+.views-ui-display-tab-bucket.overridden {
+  font-style: italic;
+  color: red !important;
+  font-weight: bold;
+}
+
+.page-wrapper {
+  max-width: 100% !important;
+}
+
+/**
+ * @file
+ * Grid system definition for the content wide layout.
+ */
+
+.layout--content-medium,
+.layout--pass--content-medium > * {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 6;
+  grid-column: 2 / 18 !important;
+  width: 100%;
+}
+
+@media (min-width: 43.75rem) {
+
+  .layout--content-medium,
+  .layout--pass--content-medium > * {
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 12;
+    grid-column: 2 / 18 !important;
+  }
+}
+
+@media (min-width: 62.5rem) {
+
+  .layout--content-medium,
+  .layout--pass--content-medium > * {
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 10;
+    grid-column: 2 / 18 !important;
+  }
+}
+
+/*
+  If .layout--content-medium is nested within itself, or an element that's inheriting the
+  layout--content-medium styles from its parent region, go full width within its
+  parent .grid-full.
+*/
+
+@media (min-width: 43.75rem) {
+
+  .layout--pass--content-medium > * .layout--content-medium,
+  .layout--content-medium .layout--content-medium,
+  .layout--pass--content-medium > * .layout--pass--content-medium > *,
+  .layout--content-medium .layout--pass--content-medium > * {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 12;
+    grid-column: 2 / 18 !important;
+  }
+}
+
+@media (min-width: 62.5rem) {
+
+  .layout--pass--content-medium > * .layout--content-medium,
+  .layout--content-medium .layout--content-medium,
+  .layout--pass--content-medium > * .layout--pass--content-medium > *,
+  .layout--content-medium .layout--pass--content-medium > * {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 10;
+    grid-column: 2 / 18 !important;
+  }
+}
+
+.views-field.views-field-field-oss-git-repo-icon {
+  min-width: 100px !important;
+}
+
+.wide-image {
+  margin-left: 0 !important;
+}
+
+// Git Readme.md field styling.
+.field--name-field-oss-git-repo-readme-md .field__item {
+  color: darkslategray;
+  font-size: 1rem;
+  margin: 20px;
+  h1 {
+    color: darkslategray;
+    font-size: 1.8rem;
+    margin-top: 1.2rem;
+    margin-bottom: inherit;
+  }
+  h2 {
+    color: darkslategray;
+    font-size: 1.6rem;
+    margin-top: 1.2rem;
+    margin-bottom: inherit;
+  }
+  h3 {
+    color: darkslategray;
+    font-size: 1.4rem;
+    margin-top: 1.1rem;
+    margin-bottom: inherit;
+  }
+  h4,
+  h5,
+  h6 {
+    color: darkslategray;
+    font-size: 1.1rem;
+    margin-top: 1.1rem;
+    margin-bottom: inherit;
+  }
+  p {
+    color: darkslategray;
+    margin-top: inherit;
+    margin-bottom: inherit;
+  }
+}

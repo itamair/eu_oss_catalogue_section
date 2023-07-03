@@ -1,0 +1,10 @@
+name: EU OSS Catalogue wrapper
+type: module
+description: "Wrapper module for EU OSS Catalogue submodules"
+package: EU OSS Catalogue
+core_version_requirement: ^9 || ^10
+
+dependencies:
+  - migrate_plus:migrate_plus
+  - migrate_tools:migrate_tools
+  - oss_catalogue_opensource_solution_content_type:oss_catalogue_opensource_solution_content_type

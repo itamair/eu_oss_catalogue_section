@@ -1,0 +1,36 @@
+name: 'Migrations Group EC OSS Catalogue'
+type: module
+core_version_requirement: '^8.9 || ^9'
+dependencies:
+  - backup_migrate
+  - block
+  - block_content
+  - cer
+  - contact
+  - editor
+  - features
+  - field
+  - file
+  - filter
+  - image
+  - jsonapi_extras
+  - language
+  - layout_builder_styles
+  - media
+  - menu_link_content
+  - migrate_plus
+  - node
+  - paragraphs
+  - paragraphs_library
+  - path_alias
+  - pathauto
+  - rdf
+  - rest
+  - shortcut
+  - system
+  - taxonomy
+  - tour
+  - ultimate_cron
+  - views
+version: '1.0'
+package: 'OSS Catalogue'

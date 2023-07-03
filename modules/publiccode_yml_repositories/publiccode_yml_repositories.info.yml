@@ -1,0 +1,10 @@
+name: Publiccode.yml_Repositories
+type: module
+description: "Catalogue builder of Publiccode.yml federated sources & repositories"
+package: EU OSS Catalogue
+core_version_requirement: ^9 || ^10
+
+dependencies:
+  - eu_oss_catalogue_section:eu_oss_catalogue_section
+  - yaml_editor:yaml_editor
+  - svg_image:svg_image

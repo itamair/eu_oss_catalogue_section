@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_oss_source
+    - node.type.opensource_solution
+    - taxonomy.vocabulary.oss_solution_source
+id: node.opensource_solution.field_oss_source
+field_name: field_oss_source
+entity_type: node
+bundle: opensource_solution
+label: 'Federated Source'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      oss_solution_source: oss_solution_source
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

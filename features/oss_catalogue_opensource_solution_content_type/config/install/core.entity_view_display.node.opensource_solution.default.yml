@@ -1,0 +1,164 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.opensource_solution.field_git_repo_description
+    - field.field.node.opensource_solution.field_oss_created
+    - field.field.node.opensource_solution.field_oss_description
+    - field.field.node.opensource_solution.field_oss_git_repo_icon
+    - field.field.node.opensource_solution.field_oss_git_repo_id
+    - field.field.node.opensource_solution.field_oss_git_repo_readme_md
+    - field.field.node.opensource_solution.field_oss_git_repo_url
+    - field.field.node.opensource_solution.field_oss_publiccode_active
+    - field.field.node.opensource_solution.field_oss_publiccode_yml_content
+    - field.field.node.opensource_solution.field_oss_short_description
+    - field.field.node.opensource_solution.field_oss_source
+    - field.field.node.opensource_solution.field_oss_updated
+    - image.style.medium
+    - node.type.opensource_solution
+  module:
+    - datetime
+    - field_formatter_range
+    - field_group
+    - link
+    - svg_image
+    - text
+    - user
+third_party_settings:
+  field_group:
+    group_publiccode_yml_content:
+      children:
+        - field_oss_publiccode_yml_content
+      label: 'Publiccode.Yml Content'
+      parent_name: ''
+      region: content
+      weight: 11
+      format_type: details
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: false
+        description: ''
+        required_fields: false
+id: node.opensource_solution.default
+targetEntityType: node
+bundle: opensource_solution
+mode: default
+content:
+  field_git_repo_description:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_oss_created:
+    type: datetime_default
+    label: inline
+    settings:
+      timezone_override: ''
+      format_type: d_m_y
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_oss_description:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  field_oss_git_repo_icon:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: medium
+      image_loading:
+        attribute: lazy
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_oss_git_repo_id:
+    type: string
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_oss_git_repo_readme_md:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_oss_git_repo_url:
+    type: link
+    label: inline
+    settings:
+      trim_length: 200
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: _blank
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_oss_publiccode_yml_content:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  field_oss_short_description:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 9
+    region: content
+  field_oss_source:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: false
+    third_party_settings:
+      field_formatter_range:
+        order: 0
+        limit: 0
+        offset: 0
+    weight: 1
+    region: content
+  field_oss_updated:
+    type: datetime_default
+    label: inline
+    settings:
+      timezone_override: ''
+      format_type: d_m_y
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  langcode:
+    type: language
+    label: visually_hidden
+    settings:
+      link_to_entity: false
+      native_language: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 12
+    region: content
+hidden:
+  field_oss_publiccode_active: true
