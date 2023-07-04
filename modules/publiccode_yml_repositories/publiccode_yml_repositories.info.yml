@@ -6,5 +6,4 @@ core_version_requirement: ^9 || ^10
 
 dependencies:
   - eu_oss_catalogue_section:eu_oss_catalogue_section
-  - yaml_editor:yaml_editor
   - svg_image:svg_image

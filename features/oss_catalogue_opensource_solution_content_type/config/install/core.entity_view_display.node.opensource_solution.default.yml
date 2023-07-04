@@ -18,29 +18,10 @@ dependencies:
     - node.type.opensource_solution
   module:
     - datetime
-    - field_formatter_range
-    - field_group
     - link
     - svg_image
     - text
     - user
-third_party_settings:
-  field_group:
-    group_publiccode_yml_content:
-      children:
-        - field_oss_publiccode_yml_content
-      label: 'Publiccode.Yml Content'
-      parent_name: ''
-      region: content
-      weight: 11
-      format_type: details
-      format_settings:
-        classes: ''
-        show_empty_fields: false
-        id: ''
-        open: false
-        description: ''
-        required_fields: false
 id: node.opensource_solution.default
 targetEntityType: node
 bundle: opensource_solution
@@ -130,11 +111,7 @@ content:
     label: inline
     settings:
       link: false
-    third_party_settings:
-      field_formatter_range:
-        order: 0
-        limit: 0
-        offset: 0
+    third_party_settings: {  }
     weight: 1
     region: content
   field_oss_updated:

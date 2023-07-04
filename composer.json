@@ -17,9 +17,14 @@
     "license": "GPL-2.0+",
     "minimum-stability": "dev",
     "require": {
+        "drupal/migrate_plus": "^6.0",
+        "drupal/migrate_tools": "^6.0",
+        "drupal/migrate_file": "^2.1",
+        "drupal/markdown": "^6.0",
         "league/commonmark": "^2.4",
-        "drupal/yaml_editor": "^1.1",
         "drupal/svg_image": "^3.0",
-        "drupal/migrate_plus": "^6.0"
+        "drupal/entity_usage": "2.0@beta",
+        "drupal/config_update": "^2.0@alpha",
+        "drupal/features": "^3.13"
     }
 }

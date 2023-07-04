@@ -2,6 +2,7 @@
 
 namespace Drupal\publiccode_yml_repositories\Plugin\migrate\source;
 
+use Drupal\migrate\Plugin\MigrationInterface;
 use Drupal\migrate_plus\Plugin\migrate\source\Url;
 use Drupal\migrate\Row;
 use Symfony\Component\Yaml\Yaml;
@@ -14,6 +15,21 @@ use Symfony\Component\Yaml\Yaml;
  * )
  */
 class PubliccodeYmlSources extends Url {
+
+  /**
+   * The Publiccode Yml Parser Service.
+   *
+   * @var \Drupal\eu_oss_catalogue_section\Services\PubliccodeYmlParserInterface
+   */
+  protected \Drupal\eu_oss_catalogue_section\Services\PubliccodeYmlParserInterface $publiccodeYmlParser;
+
+ /**
+ * {@inheritdoc}
+ */
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, MigrationInterface $migration) {
+    parent::__construct($configuration, $plugin_id, $plugin_definition, $migration);
+    $this->publiccodeYmlParser = \Drupal::service('publiccode_yml_parser');
+  }
 
   /**
    * {@inheritdoc}

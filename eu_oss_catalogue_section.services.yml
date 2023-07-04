@@ -1,0 +1,4 @@
+services:
+  publiccode_yml_parser:
+    class: Drupal\eu_oss_catalogue_section\Services\PubliccodeYmlParser
+    arguments: ['@serialization.yaml']

@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\publiccode_yml_repositories\Services;
+namespace Drupal\eu_oss_catalogue_section\Services;
 
 use Drupal\Component\Serialization\Yaml;
 
@@ -26,13 +26,21 @@ class PubliccodeYmlParser implements PubliccodeYmlParserInterface {
     $this->serializationYaml = $serialization_yaml;
   }
 
+
+  /**
+   * {@inheritdoc}
+   */
+  public function publiccodeYmlArrayValues(string $publiccode_yml_string_value): array {
+    return $this->serializationYaml->decode($publiccode_yml_string_value);
+  }
+
   /**
    * {@inheritdoc}
    */
   public function descriptionBlock(string $yml_value): array {
     $description_block = [];
     try {
-      $publiccode_yml_values = $this->serializationYaml->decode($yml_value);
+      $publiccode_yml_values = $this->publiccodeYmlArrayValues($yml_value);
       if (array_key_exists('description', $publiccode_yml_values)) {
         $description_block = $publiccode_yml_values['description'];
       }

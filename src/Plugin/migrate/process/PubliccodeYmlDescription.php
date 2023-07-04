@@ -8,7 +8,7 @@ use Drupal\migrate\ProcessPluginBase;
 use Drupal\migrate\MigrateExecutableInterface;
 use Drupal\migrate\Row;
 use Symfony\Component\DependencyInjection\ContainerInterface;
-use Drupal\publiccode_yml_repositories\Services\PubliccodeYmlParserInterface;
+use Drupal\eu_oss_catalogue_section\Services\PubliccodeYmlParserInterface;
 
 /**
  * Returns the Description It value of the PubliccodeYm content.
@@ -37,8 +37,8 @@ class PubliccodeYmlDescription extends ProcessPluginBase implements ContainerFac
    *   The plugin ID.
    * @param mixed $plugin_definition
    *   The plugin definition.
-   * @param \Drupal\publiccode_yml_repositories\Services\PubliccodeYmlParserInterface $publiccode_yml_parser
-   *   The field plugin manager.
+   * @param \Drupal\eu_oss_catalogue_section\Services\PubliccodeYmlParserInterface $publiccode_yml_parser
+   *   The Publiccode Yml Parser Service.
    */
   public function __construct(array $configuration, $plugin_id, $plugin_definition, PubliccodeYmlParserInterface $publiccode_yml_parser) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);

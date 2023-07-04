@@ -11,7 +11,7 @@ bundle: opensource_solution
 label: 'OSS Short Description'
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings: {  }

@@ -22,7 +22,6 @@ dependencies:
     - path
     - svg_image
     - text
-    - yaml_editor
 id: node.opensource_solution.default
 targetEntityType: node
 bundle: opensource_solution
@@ -96,7 +95,7 @@ content:
       display_label: true
     third_party_settings: {  }
   field_oss_publiccode_yml_content:
-    type: yaml_editor
+    type: string_textarea
     weight: 9
     region: content
     settings:

@@ -8,7 +8,7 @@ use Drupal\migrate\ProcessPluginBase;
 use Drupal\migrate\MigrateExecutableInterface;
 use Drupal\migrate\Row;
 use Symfony\Component\DependencyInjection\ContainerInterface;
-use Drupal\publiccode_yml_repositories\Services\PubliccodeYmlParserInterface;
+use Drupal\eu_oss_catalogue_section\Services\PubliccodeYmlParserInterface;
 
 /**
  * Returns the Description It value of the PubliccodeYm content.
@@ -37,7 +37,7 @@ class PubliccodeYmlShortDescription extends ProcessPluginBase implements Contain
    *   The plugin ID.
    * @param mixed $plugin_definition
    *   The plugin definition.
-   * @param \Drupal\publiccode_yml_repositories\Services\PubliccodeYmlParserInterface $publiccode_yml_parser
+   * @param \Drupal\eu_oss_catalogue_section\Services\PubliccodeYmlParserInterface $publiccode_yml_parser
    *   The field plugin manager.
    */
   public function __construct(array $configuration, $plugin_id, $plugin_definition, PubliccodeYmlParserInterface $publiccode_yml_parser) {
@@ -67,7 +67,7 @@ class PubliccodeYmlShortDescription extends ProcessPluginBase implements Contain
     $langcode = $row->getSourceProperty('langcode') ?? 'it';
     if (!empty($description_block) &&
       array_key_exists($langcode, $description_block) &&
-      array_key_exists('longDescription', $description_block[$langcode]) &&
+      array_key_exists('shortDescription', $description_block[$langcode]) &&
       !empty($description_block[$langcode]['shortDescription'])) {
       $description = $description_block[$langcode]['shortDescription'];
     }
