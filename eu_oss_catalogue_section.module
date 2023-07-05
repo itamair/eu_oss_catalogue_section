@@ -8,6 +8,6 @@
 /**
  * Implements hook_page_attachments().
  */
-function ec_oss_catalogue_page_attachments(array &$page) {
+function eu_oss_catalogue_section_attachments(array &$page) {
   $page['#attached']['library'][] = 'eu_oss_catalogue_section/common';
 }
